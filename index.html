@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Collegium — The complete platform for residential colleges</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -19,12 +21,25 @@ a{color:#A6192E;text-decoration:none;}
 a:hover{color:#A6192E;}
 ::selection{background:#131315;color:#fff;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+
+@media (max-width:900px){
+  .est{display:none !important;}
+  .navin{flex-wrap:wrap !important;padding:14px 20px !important;gap:12px !important;}
+  .navlinks{gap:16px !important;font-size:13px !important;flex-wrap:wrap !important;justify-content:flex-end !important;}
+  .g3,.g4{grid-template-columns:1fr !important;}
+}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr !important;gap:44px !important;padding:56px 24px 64px !important;}
+  .heroarch{justify-self:center !important;width:min(340px,100%) !important;}
+  .g2int{grid-template-columns:1fr !important;}
+  .g2int > div:first-child{border-right:none !important;border-bottom:1px solid #E5E5E2 !important;}
+}
 </style>
 </helmet>
 <nav style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid #E5E5E2;">
-  <div style="max-width:1160px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
-    <a href="/" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:.06em;color:#A6192E;display:flex;align-items:baseline;gap:10px;">COLLEGIUM<span style="font-size:11px;font-family:'Source Sans 3',sans-serif;font-weight:600;letter-spacing:.18em;color:#8A8A8E;">EST. MMXXV</span></a>
-    <div style="display:flex;align-items:center;gap:32px;font-size:14px;font-weight:600;letter-spacing:.04em;">
+  <div class="navin" style="max-width:1160px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+    <a href="/" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:.06em;color:#A6192E;display:flex;align-items:baseline;gap:10px;">COLLEGIUM<span class="est" style="font-size:11px;font-family:'Source Sans 3',sans-serif;font-weight:600;letter-spacing:.18em;color:#8A8A8E;">EST. MMXXV</span></a>
+    <div class="navlinks" style="display:flex;align-items:center;gap:32px;font-size:14px;font-weight:600;letter-spacing:.04em;">
       <a href="/" style="color:#A6192E;border-bottom:2px solid #A6192E;padding-bottom:2px;">Home</a>
       <a href="/how-it-works" style="color:#57575B;" style-hover="color:#A6192E;">How it works</a>
       <a href="/contact" style="color:#57575B;" style-hover="color:#A6192E;">Contact</a>
@@ -33,17 +48,17 @@ a:hover{color:#A6192E;}
   </div>
 </nav>
 <header style="background:#F7F7F5;border-bottom:1px solid #E5E5E2;overflow:hidden;">
-  <div style="max-width:1160px;margin:0 auto;padding:88px 32px 96px;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;">
+  <div class="hero" style="max-width:1160px;margin:0 auto;padding:88px 32px 96px;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;">
     <div style="animation:fadeUp .7s ease both;">
       <div style="font-size:12px;font-weight:700;letter-spacing:.2em;color:#A6192E;text-transform:uppercase;margin-bottom:22px;">For Australian residential colleges</div>
-      <h1 style="font-family:'Cormorant Garamond',serif;font-size:62px;line-height:1.06;font-weight:500;margin:0 0 24px;color:#131315;text-wrap:balance;">From first enquiry to lifelong alumnus.</h1>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(36px,7.5vw,62px);line-height:1.06;font-weight:500;margin:0 0 24px;color:#131315;text-wrap:balance;">From first enquiry to lifelong alumnus.</h1>
       <p style="font-size:19px;line-height:1.6;color:#57575B;max-width:480px;margin:0 0 36px;text-wrap:pretty;">Collegium is the complete student lifecycle platform for residential colleges — admissions, offers, payments, room allocation, student life and advancement, orchestrated in one system.</p>
       <div style="display:flex;gap:16px;align-items:center;">
         <a href="/contact" style="background:#A6192E;color:#F7F7F5;padding:15px 32px;border-radius:2px;font-size:15px;font-weight:600;letter-spacing:.03em;" style-hover="background:#131315;color:#fff;">Get in touch</a>
         <a href="/how-it-works" style="font-size:15px;font-weight:600;color:#A6192E;border-bottom:1px solid #A6192E;padding-bottom:2px;">See how it works →</a>
       </div>
     </div>
-    <div style="justify-self:end;width:340px;animation:fadeUp .7s .15s ease both;">
+    <div class="heroarch" style="justify-self:end;width:340px;animation:fadeUp .7s .15s ease both;">
       <div style="border:1px solid #D4D4D1;border-radius:170px 170px 2px 2px;background:#FFFFFF;padding:56px 36px 36px;box-shadow:0 24px 48px -32px rgba(166,25,46,.35);">
         <div style="text-align:center;font-size:11px;font-weight:700;letter-spacing:.22em;color:#A6192E;text-transform:uppercase;margin-bottom:26px;">The resident journey</div>
         <sc-for list="{{ journey }}" as="j" hint-placeholder-count="6">
@@ -69,10 +84,10 @@ a:hover{color:#A6192E;}
 <section style="max-width:1160px;margin:0 auto;padding:96px 32px 40px;">
   <div style="text-align:center;max-width:640px;margin:0 auto 64px;">
     <div style="font-size:12px;font-weight:700;letter-spacing:.2em;color:#A6192E;text-transform:uppercase;margin-bottom:16px;">One platform, three chapters</div>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:500;margin:0 0 16px;color:#131315;">The whole college, in step</h2>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(30px,6vw,42px);font-weight:500;margin:0 0 16px;color:#131315;">The whole college, in step</h2>
     <p style="font-size:17px;line-height:1.6;color:#57575B;margin:0;text-wrap:pretty;">Most colleges run admissions in spreadsheets, residency in one system and alumni in another. Collegium joins the three into a single, continuous record of every resident.</p>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
+  <div class="g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
     <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="3">
       <div style="background:#F7F7F5;border:1px solid #E5E5E2;border-radius:2px;padding:36px 30px;display:flex;flex-direction:column;gap:0;">
         <div style="font-family:'Cormorant Garamond',serif;font-size:44px;color:#3F3F44;line-height:1;margin-bottom:18px;">{{ p.numeral }}</div>
@@ -88,10 +103,10 @@ a:hover{color:#A6192E;}
   </div>
 </section>
 <section style="max-width:1160px;margin:0 auto;padding:56px 32px 96px;">
-  <div style="border:1px solid #E5E5E2;border-radius:2px;background:#FFFFFF;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;">
+  <div style="border:1px solid #E5E5E2;border-radius:2px;background:#FFFFFF;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;" class="g2int">
     <div style="padding:52px 48px;border-right:1px solid #E5E5E2;">
       <div style="font-size:12px;font-weight:700;letter-spacing:.2em;color:#A6192E;text-transform:uppercase;margin-bottom:16px;">Under the hood</div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:500;margin:0 0 16px;color:#131315;">Built on HubSpot. Connected to your college.</h2>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,5vw,34px);font-weight:500;margin:0 0 16px;color:#131315;">Built on HubSpot. Connected to your college.</h2>
       <p style="font-size:16px;line-height:1.6;color:#57575B;margin:0;text-wrap:pretty;">Collegium runs entirely on the HubSpot platform — no bespoke servers to maintain, enterprise-grade security, and a CRM your staff already know how to use. Everything else in your college connects through integration, so your residential, access and finance systems stay the source of truth for what they do best.</p>
     </div>
     <div style="padding:52px 48px;display:flex;flex-direction:column;gap:14px;background:#F7F7F5;">
@@ -107,9 +122,9 @@ a:hover{color:#A6192E;}
 <section style="background:#A6192E;">
   <div style="max-width:900px;margin:0 auto;padding:96px 32px;text-align:center;">
     <div style="font-size:12px;font-weight:700;letter-spacing:.22em;color:#F1D3D7;text-transform:uppercase;margin-bottom:28px;">Case study — Ormond College</div>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:33px;line-height:1.4;font-style:italic;color:#F7F7F5;margin:0 0 32px;text-wrap:balance;">“We have greater visibility of each prospective student’s journey through a single, consolidated view — enabling more personalised and timely engagement. Automated workflows have reduced manual administration and greatly reduced general enquiries.”</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,5vw,33px);line-height:1.4;font-style:italic;color:#F7F7F5;margin:0 0 32px;text-wrap:balance;">“We have greater visibility of each prospective student’s journey through a single, consolidated view — enabling more personalised and timely engagement. Automated workflows have reduced manual administration and greatly reduced general enquiries.”</p>
     <div style="font-size:14px;font-weight:600;letter-spacing:.06em;color:#F1D3D7;margin-bottom:40px;">Kim Exell — Admissions Manager, Ormond College</div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;border-top:1px solid #C04B58;padding-top:40px;margin-bottom:36px;">
+    <div class="g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;border-top:1px solid #C04B58;padding-top:40px;margin-bottom:36px;">
       <div><div style="font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:500;color:#fff;line-height:1;">500+</div><div style="font-size:13.5px;line-height:1.5;color:#EBD5D8;margin-top:8px;">applicant interviews, unified out of spreadsheets</div></div>
       <div><div style="font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:500;color:#fff;line-height:1;">10 → 1</div><div style="font-size:13.5px;line-height:1.5;color:#EBD5D8;margin-top:8px;">offer letter variants, replaced by one intelligent template</div></div>
       <div><div style="font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:500;color:#fff;line-height:1;">9 → 3</div><div style="font-size:13.5px;line-height:1.5;color:#EBD5D8;margin-top:8px;">core systems consolidated across the college</div></div>
@@ -121,10 +136,10 @@ a:hover{color:#A6192E;}
 <section style="max-width:1160px;margin:0 auto;padding:96px 32px;">
   <div style="text-align:center;max-width:600px;margin:0 auto 56px;">
     <div style="font-size:12px;font-weight:700;letter-spacing:.2em;color:#A6192E;text-transform:uppercase;margin-bottom:16px;">Packages</div>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:500;margin:0 0 14px;color:#131315;">Begin where it matters most</h2>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(30px,6vw,42px);font-weight:500;margin:0 0 14px;color:#131315;">Begin where it matters most</h2>
     <p style="font-size:16px;line-height:1.6;color:#57575B;margin:0;">Every college starts differently. Each package builds on the last — and every engagement is scoped with you.</p>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:stretch;">
+  <div class="g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:stretch;">
     <sc-for list="{{ tiers }}" as="t" hint-placeholder-count="3">
       <div style="border:1px solid {{ t.border }};background:{{ t.bg }};border-radius:2px;padding:40px 32px;display:flex;flex-direction:column;">
         <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:{{ t.tagColor }};margin-bottom:12px;">{{ t.tag }}</div>
@@ -143,7 +158,7 @@ a:hover{color:#A6192E;}
 </sc-if>
 <section style="background:#F7F7F5;border-top:1px solid #E5E5E2;">
   <div style="max-width:760px;margin:0 auto;padding:88px 32px;text-align:center;">
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:500;margin:0 0 18px;color:#131315;text-wrap:balance;">Ready to see your college in one system?</h2>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(30px,6vw,44px);font-weight:500;margin:0 0 18px;color:#131315;text-wrap:balance;">Ready to see your college in one system?</h2>
     <p style="font-size:17px;color:#57575B;line-height:1.6;margin:0 0 36px;">We'll walk you through the Ormond build and map it to your college's journey.</p>
     <a href="/contact" style="display:inline-block;background:#A6192E;color:#F7F7F5;padding:16px 40px;border-radius:2px;font-size:16px;font-weight:600;letter-spacing:.03em;" style-hover="background:#131315;color:#fff;">Get in touch</a>
   </div>

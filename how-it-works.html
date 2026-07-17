@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How it works — Collegium</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -19,12 +21,24 @@ a{color:#A6192E;text-decoration:none;}
 a:hover{color:#A6192E;}
 ::selection{background:#131315;color:#fff;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+
+@media (max-width:900px){
+  .est{display:none !important;}
+  .navin{flex-wrap:wrap !important;padding:14px 20px !important;gap:12px !important;}
+  .navlinks{gap:16px !important;font-size:13px !important;flex-wrap:wrap !important;justify-content:flex-end !important;}
+  .g3,.g4{grid-template-columns:1fr !important;}
+}
+@media (max-width:900px){
+  .trow{grid-template-columns:48px 26px 1fr !important;}
+  .tnum{text-align:left !important;}
+  .tnum > div:first-child{font-size:26px !important;}
+}
 </style>
 </helmet>
 <nav style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid #E5E5E2;">
-  <div style="max-width:1160px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
-    <a href="/" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:.06em;color:#A6192E;display:flex;align-items:baseline;gap:10px;">COLLEGIUM<span style="font-size:11px;font-family:'Source Sans 3',sans-serif;font-weight:600;letter-spacing:.18em;color:#8A8A8E;">EST. MMXXV</span></a>
-    <div style="display:flex;align-items:center;gap:32px;font-size:14px;font-weight:600;letter-spacing:.04em;">
+  <div class="navin" style="max-width:1160px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+    <a href="/" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:.06em;color:#A6192E;display:flex;align-items:baseline;gap:10px;">COLLEGIUM<span class="est" style="font-size:11px;font-family:'Source Sans 3',sans-serif;font-weight:600;letter-spacing:.18em;color:#8A8A8E;">EST. MMXXV</span></a>
+    <div class="navlinks" style="display:flex;align-items:center;gap:32px;font-size:14px;font-weight:600;letter-spacing:.04em;">
       <a href="/" style="color:#57575B;" style-hover="color:#A6192E;">Home</a>
       <a href="/how-it-works" style="color:#A6192E;border-bottom:2px solid #A6192E;padding-bottom:2px;">How it works</a>
       <a href="/contact" style="color:#57575B;" style-hover="color:#A6192E;">Contact</a>
@@ -35,15 +49,15 @@ a:hover{color:#A6192E;}
 <header style="background:#F7F7F5;border-bottom:1px solid #E5E5E2;">
   <div style="max-width:1160px;margin:0 auto;padding:80px 32px;text-align:center;animation:fadeUp .7s ease both;">
     <div style="font-size:12px;font-weight:700;letter-spacing:.2em;color:#A6192E;text-transform:uppercase;margin-bottom:20px;">How it works</div>
-    <h1 style="font-family:'Cormorant Garamond',serif;font-size:54px;line-height:1.08;font-weight:500;margin:0 auto 20px;color:#131315;max-width:760px;text-wrap:balance;">One journey, eight movements.</h1>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,7vw,54px);line-height:1.08;font-weight:500;margin:0 auto 20px;color:#131315;max-width:760px;text-wrap:balance;">One journey, eight movements.</h1>
     <p style="font-size:18px;line-height:1.6;color:#57575B;max-width:600px;margin:0 auto;text-wrap:pretty;">Follow a student through Collegium — from the moment they first hear of your college to the day they give back to it. Each stage is automated where it should be, and human where it must be.</p>
   </div>
 </header>
 <section style="max-width:920px;margin:0 auto;padding:88px 32px;">
   <div style="position:relative;display:flex;flex-direction:column;gap:0;">
     <sc-for list="{{ stages }}" as="s" hint-placeholder-count="8">
-      <div style="display:grid;grid-template-columns:120px 56px 1fr;gap:0;align-items:stretch;">
-        <div style="text-align:right;padding:6px 0 48px;">
+      <div class="trow" style="display:grid;grid-template-columns:120px 56px 1fr;gap:0;align-items:stretch;">
+        <div class="tnum" style="text-align:right;padding:6px 0 48px;">
           <div style="font-family:'Cormorant Garamond',serif;font-size:38px;color:#3F3F44;line-height:1;">{{ s.numeral }}</div>
           <div style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A8A8E;margin-top:6px;">{{ s.chapter }}</div>
         </div>
@@ -52,7 +66,7 @@ a:hover{color:#A6192E;}
           <div style="width:1px;flex:1;background:#E5E5E2;"></div>
         </div>
         <div style="padding:0 0 48px 8px;">
-          <h2 style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;margin:4px 0 10px;color:#A6192E;">{{ s.title }}</h2>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,5.5vw,30px);font-weight:600;margin:4px 0 10px;color:#A6192E;">{{ s.title }}</h2>
           <p style="font-size:16px;line-height:1.6;color:#57575B;margin:0 0 18px;text-wrap:pretty;">{{ s.body }}</p>
           <div style="display:flex;flex-wrap:wrap;gap:8px;">
             <sc-for list="{{ s.features }}" as="f" hint-placeholder-count="4">
@@ -68,10 +82,10 @@ a:hover{color:#A6192E;}
   <div style="max-width:1160px;margin:0 auto;padding:88px 32px;">
     <div style="text-align:center;max-width:620px;margin:0 auto 56px;">
       <div style="font-size:12px;font-weight:700;letter-spacing:.22em;color:#D98A95;text-transform:uppercase;margin-bottom:16px;">The architecture</div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:500;margin:0 0 14px;color:#F7F7F5;">HubSpot at the centre, your systems around it</h2>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,6vw,40px);font-weight:500;margin:0 0 14px;color:#F7F7F5;">HubSpot at the centre, your systems around it</h2>
       <p style="font-size:16px;line-height:1.65;color:#C7C2BB;margin:0;text-wrap:pretty;">Collegium is built entirely on HubSpot — CRM, automation, forms, email and payments. Your specialist systems keep doing what they do best, connected by integration.</p>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;max-width:960px;margin:0 auto;">
+    <div class="g3" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;max-width:960px;margin:0 auto;">
       <sc-for list="{{ arch }}" as="a" hint-placeholder-count="3">
         <div style="border:1px solid #3A3A3E;background:#232327;border-radius:2px;padding:30px 26px;">
           <div style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#D98A95;margin-bottom:10px;">{{ a.tag }}</div>
@@ -85,10 +99,10 @@ a:hover{color:#A6192E;}
 <section style="max-width:1160px;margin:0 auto;padding:96px 32px;">
   <div style="text-align:center;max-width:600px;margin:0 auto 56px;">
     <div style="font-size:12px;font-weight:700;letter-spacing:.2em;color:#A6192E;text-transform:uppercase;margin-bottom:16px;">Getting started</div>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:500;margin:0 0 14px;color:#131315;">From first meeting to first intake</h2>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,6vw,40px);font-weight:500;margin:0 0 14px;color:#131315;">From first meeting to first intake</h2>
     <p style="font-size:16px;line-height:1.6;color:#57575B;margin:0;">A proven implementation path, refined at Ormond College.</p>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
+  <div class="g4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
     <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
       <div style="border-top:2px solid #A6192E;padding-top:22px;">
         <div style="font-size:11px;font-weight:700;letter-spacing:.18em;color:#A6192E;text-transform:uppercase;margin-bottom:8px;">Step {{ st.n }}</div>
@@ -100,7 +114,7 @@ a:hover{color:#A6192E;}
 </section>
 <section style="background:#F7F7F5;border-top:1px solid #E5E5E2;">
   <div style="max-width:760px;margin:0 auto;padding:88px 32px;text-align:center;">
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:500;margin:0 0 18px;color:#131315;text-wrap:balance;">Let's map this to your college.</h2>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(30px,6vw,44px);font-weight:500;margin:0 0 18px;color:#131315;text-wrap:balance;">Let's map this to your college.</h2>
     <p style="font-size:17px;color:#57575B;line-height:1.6;margin:0 0 36px;">Every college's journey is a little different. We'll show you where Collegium fits yours.</p>
     <a href="/contact" style="display:inline-block;background:#A6192E;color:#F7F7F5;padding:16px 40px;border-radius:2px;font-size:16px;font-weight:600;letter-spacing:.03em;" style-hover="background:#131315;color:#fff;">Get in touch</a>
   </div>
