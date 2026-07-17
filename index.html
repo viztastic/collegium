@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>Collegium — The complete platform for residential colleges</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#FFFFFF;}
+body{font-family:'Source Sans 3',sans-serif;color:#1C1C1E;-webkit-font-smoothing:antialiased;}
+a{color:#A6192E;text-decoration:none;}
+a:hover{color:#A6192E;}
+::selection{background:#131315;color:#fff;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+</style>
+</helmet>
+<nav style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid #E5E5E2;">
+  <div style="max-width:1160px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+    <a href="/" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:.06em;color:#A6192E;display:flex;align-items:baseline;gap:10px;">COLLEGIUM<span style="font-size:11px;font-family:'Source Sans 3',sans-serif;font-weight:600;letter-spacing:.18em;color:#8A8A8E;">EST. MMXXV</span></a>
+    <div style="display:flex;align-items:center;gap:32px;font-size:14px;font-weight:600;letter-spacing:.04em;">
+      <a href="/" style="color:#A6192E;border-bottom:2px solid #A6192E;padding-bottom:2px;">Home</a>
+      <a href="/how-it-works" style="color:#57575B;" style-hover="color:#A6192E;">How it works</a>
+      <a href="/contact" style="color:#57575B;" style-hover="color:#A6192E;">Contact</a>
+      <a href="/contact" style="background:#A6192E;color:#F7F7F5;padding:10px 22px;border-radius:2px;font-weight:600;" style-hover="background:#131315;color:#fff;">Get in touch</a>
+    </div>
+  </div>
+</nav>
+<header style="background:#F7F7F5;border-bottom:1px solid #E5E5E2;overflow:hidden;">
+  <div style="max-width:1160px;margin:0 auto;padding:88px 32px 96px;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;">
+    <div style="animation:fadeUp .7s ease both;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.2em;color:#A6192E;text-transform:uppercase;margin-bottom:22px;">For Australian residential colleges</div>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:62px;line-height:1.06;font-weight:500;margin:0 0 24px;color:#131315;text-wrap:balance;">From first enquiry to lifelong alumnus.</h1>
+      <p style="font-size:19px;line-height:1.6;color:#57575B;max-width:480px;margin:0 0 36px;text-wrap:pretty;">Collegium is the complete student lifecycle platform for residential colleges — admissions, offers, payments, room allocation, student life and advancement, orchestrated in one system.</p>
+      <div style="display:flex;gap:16px;align-items:center;">
+        <a href="/contact" style="background:#A6192E;color:#F7F7F5;padding:15px 32px;border-radius:2px;font-size:15px;font-weight:600;letter-spacing:.03em;" style-hover="background:#131315;color:#fff;">Get in touch</a>
+        <a href="/how-it-works" style="font-size:15px;font-weight:600;color:#A6192E;border-bottom:1px solid #A6192E;padding-bottom:2px;">See how it works →</a>
+      </div>
+    </div>
+    <div style="justify-self:end;width:340px;animation:fadeUp .7s .15s ease both;">
+      <div style="border:1px solid #D4D4D1;border-radius:170px 170px 2px 2px;background:#FFFFFF;padding:56px 36px 36px;box-shadow:0 24px 48px -32px rgba(166,25,46,.35);">
+        <div style="text-align:center;font-size:11px;font-weight:700;letter-spacing:.22em;color:#A6192E;text-transform:uppercase;margin-bottom:26px;">The resident journey</div>
+        <sc-for list="{{ journey }}" as="j" hint-placeholder-count="6">
+          <div style="display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid #ECECEA;">
+            <div style="width:26px;height:26px;border-radius:50%;border:1px solid #55555A;color:#3F3F44;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;flex-shrink:0;">{{ j.n }}</div>
+            <div>
+              <div style="font-size:14px;font-weight:600;color:#A6192E;">{{ j.t }}</div>
+              <div style="font-size:12px;color:#8A8A8E;">{{ j.d }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</header>
+<section style="background:#131315;">
+  <div style="max-width:1160px;margin:0 auto;padding:26px 32px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;">
+    <span style="color:#C9C9CE;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;">Trusted in production</span>
+    <span style="color:#4A4A4E;">·</span>
+    <span style="color:#EDEDED;font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;">Built and delivered end-to-end with Ormond College, The University of Melbourne</span>
+  </div>
+</section>
+<section style="max-width:1160px;margin:0 auto;padding:96px 32px 40px;">
+  <div style="text-align:center;max-width:640px;margin:0 auto 64px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.2em;color:#A6192E;text-transform:uppercase;margin-bottom:16px;">One platform, three chapters</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:500;margin:0 0 16px;color:#131315;">The whole college, in step</h2>
+    <p style="font-size:17px;line-height:1.6;color:#57575B;margin:0;text-wrap:pretty;">Most colleges run admissions in spreadsheets, residency in one system and alumni in another. Collegium joins the three into a single, continuous record of every resident.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
+    <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="3">
+      <div style="background:#F7F7F5;border:1px solid #E5E5E2;border-radius:2px;padding:36px 30px;display:flex;flex-direction:column;gap:0;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:44px;color:#3F3F44;line-height:1;margin-bottom:18px;">{{ p.numeral }}</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;margin:0 0 10px;color:#A6192E;">{{ p.title }}</h3>
+        <p style="font-size:15px;line-height:1.55;color:#57575B;margin:0 0 20px;text-wrap:pretty;">{{ p.blurb }}</p>
+        <div style="display:flex;flex-direction:column;gap:9px;border-top:1px solid #E5E5E2;padding-top:20px;">
+          <sc-for list="{{ p.items }}" as="it" hint-placeholder-count="4">
+            <div style="display:flex;gap:10px;font-size:14px;color:#3F3F42;"><span style="color:#A6192E;">✦</span><span>{{ it }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+<section style="max-width:1160px;margin:0 auto;padding:56px 32px 96px;">
+  <div style="border:1px solid #E5E5E2;border-radius:2px;background:#FFFFFF;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;">
+    <div style="padding:52px 48px;border-right:1px solid #E5E5E2;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.2em;color:#A6192E;text-transform:uppercase;margin-bottom:16px;">Under the hood</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:500;margin:0 0 16px;color:#131315;">Built on HubSpot. Connected to your college.</h2>
+      <p style="font-size:16px;line-height:1.6;color:#57575B;margin:0;text-wrap:pretty;">Collegium runs entirely on the HubSpot platform — no bespoke servers to maintain, enterprise-grade security, and a CRM your staff already know how to use. Everything else in your college connects through integration, so your residential, access and finance systems stay the source of truth for what they do best.</p>
+    </div>
+    <div style="padding:52px 48px;display:flex;flex-direction:column;gap:14px;background:#F7F7F5;">
+      <sc-for list="{{ integrations }}" as="ig" hint-placeholder-count="4">
+        <div style="display:flex;align-items:baseline;gap:14px;padding-bottom:13px;border-bottom:1px solid #E5E5E2;">
+          <span style="font-size:13px;font-weight:700;letter-spacing:.08em;color:#A6192E;text-transform:uppercase;white-space:nowrap;">{{ ig.name }}</span>
+          <span style="font-size:14px;color:#8A8A8E;">{{ ig.role }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+<section style="background:#A6192E;">
+  <div style="max-width:900px;margin:0 auto;padding:96px 32px;text-align:center;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.22em;color:#F1D3D7;text-transform:uppercase;margin-bottom:28px;">Case study — Ormond College</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:33px;line-height:1.4;font-style:italic;color:#F7F7F5;margin:0 0 32px;text-wrap:balance;">“From the first expression of interest to a student confirming their return the following year, every step now happens in one place — and our staff finally see the whole journey.”</p>
+    <div style="width:48px;height:1px;background:#D98A95;margin:0 auto 28px;"></div>
+    <p style="font-size:15px;line-height:1.7;color:#EBD5D8;max-width:620px;margin:0 auto;text-wrap:pretty;">Ormond College, the largest college at The University of Melbourne, runs its complete student lifecycle on Collegium: enquiry nurture, interviews, offers and financial assistance, deposits, room allocation with StarRez, check-in, student life, renewals and alumni advancement.</p>
+  </div>
+</section>
+<sc-if value="{{ showPackages }}" hint-placeholder-val="{{ true }}">
+<section style="max-width:1160px;margin:0 auto;padding:96px 32px;">
+  <div style="text-align:center;max-width:600px;margin:0 auto 56px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.2em;color:#A6192E;text-transform:uppercase;margin-bottom:16px;">Packages</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:500;margin:0 0 14px;color:#131315;">Begin where it matters most</h2>
+    <p style="font-size:16px;line-height:1.6;color:#57575B;margin:0;">Every college starts differently. Each package builds on the last — and every engagement is scoped with you.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:stretch;">
+    <sc-for list="{{ tiers }}" as="t" hint-placeholder-count="3">
+      <div style="border:1px solid {{ t.border }};background:{{ t.bg }};border-radius:2px;padding:40px 32px;display:flex;flex-direction:column;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:{{ t.tagColor }};margin-bottom:12px;">{{ t.tag }}</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:29px;font-weight:600;margin:0 0 12px;color:{{ t.titleColor }};">{{ t.name }}</h3>
+        <p style="font-size:14.5px;line-height:1.55;color:{{ t.body }};margin:0 0 22px;text-wrap:pretty;">{{ t.blurb }}</p>
+        <div style="display:flex;flex-direction:column;gap:9px;border-top:1px solid {{ t.rule }};padding-top:20px;margin-bottom:28px;">
+          <sc-for list="{{ t.items }}" as="it" hint-placeholder-count="4">
+            <div style="display:flex;gap:10px;font-size:14px;color:{{ t.body }};"><span style="color:#A6192E;">✦</span><span>{{ it }}</span></div>
+          </sc-for>
+        </div>
+        <a href="/contact" style="margin-top:auto;text-align:center;border:1px solid #A6192E;color:{{ t.cta }};padding:12px 20px;border-radius:2px;font-size:14px;font-weight:600;letter-spacing:.04em;" style-hover="background:#131315;color:#fff;">Talk to us</a>
+      </div>
+    </sc-for>
+  </div>
+</section>
+</sc-if>
+<section style="background:#F7F7F5;border-top:1px solid #E5E5E2;">
+  <div style="max-width:760px;margin:0 auto;padding:88px 32px;text-align:center;">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:500;margin:0 0 18px;color:#131315;text-wrap:balance;">Ready to see your college in one system?</h2>
+    <p style="font-size:17px;color:#57575B;line-height:1.6;margin:0 0 36px;">We'll walk you through the Ormond build and map it to your college's journey.</p>
+    <a href="/contact" style="display:inline-block;background:#A6192E;color:#F7F7F5;padding:16px 40px;border-radius:2px;font-size:16px;font-weight:600;letter-spacing:.03em;" style-hover="background:#131315;color:#fff;">Get in touch</a>
+  </div>
+</section>
+<footer style="background:#131315;">
+  <div style="max-width:1160px;margin:0 auto;padding:40px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:20px;letter-spacing:.06em;color:#EDEDED;">COLLEGIUM</div>
+    <div style="display:flex;gap:28px;font-size:13px;">
+      <a href="/" style="color:#9B948E;" style-hover="color:#D98A95;">Home</a>
+      <a href="/how-it-works" style="color:#9B948E;" style-hover="color:#D98A95;">How it works</a>
+      <a href="/contact" style="color:#9B948E;" style-hover="color:#D98A95;">Contact</a>
+    </div>
+    <div style="font-size:12px;color:#6E6862;">© 2026 Collegium · Made in Australia</div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showPackages&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const tierStyle = (featured) => featured
+      ? { border:'#131315', bg:'#131315', titleColor:'#FFFFFF', body:'#C7C2BB', rule:'#3A3A3E', cta:'#EDEDED', tagColor:'#D98A95' }
+      : { border:'#E5E5E2', bg:'#FFFFFF', titleColor:'#A6192E', body:'#57575B', rule:'#E5E5E2', cta:'#A6192E', tagColor:'#A6192E' };
+    return {
+      showPackages: this.props.showPackages ?? true,
+      journey: [
+        { n:'I', t:'Enquiry', d:'Expression of interest, nurture' },
+        { n:'II', t:'Interview', d:'Scheduling, notes & scoring' },
+        { n:'III', t:'Offer', d:'Ranking, financial assistance' },
+        { n:'IV', t:'Admission', d:'Deposits, room allocation' },
+        { n:'V', t:'Residency', d:'Check-in, student life, renewal' },
+        { n:'VI', t:'Alumni', d:'Community, events, giving' },
+      ],
+      pillars: [
+        { numeral:'I.', title:'Admissions', blurb:'A calm, automated path from first enquiry to a signed offer — no spreadsheet in sight.',
+          items:['Enquiry capture & nurture journeys','Interview scheduling, notes & scoring','Application ranking & financial assistance','Offer letters, deposits & payment tracking'] },
+        { numeral:'II.', title:'Residency', blurb:'Everything from allocation day to check-out, in step with your residential systems.',
+          items:['Room preferences & allocation workflow','Arrival day check-in — photo, key, access','Events, tutoring, wellbeing & maintenance','Renewals, intent to stay & check-out'] },
+        { numeral:'III.', title:'Advancement', blurb:'Residents become alumni automatically — with the full story of their college years intact.',
+          items:['Alumni community onboarding','Event invitations & engagement','Donor journeys & donation management','Lifetime record from enquiry to giving'] },
+      ],
+      integrations: [
+        { name:'Residential', role:'Room, bed & booking systems such as StarRez' },
+        { name:'Access', role:'Security & door access platforms such as Gallagher' },
+        { name:'Payments', role:'Fees, deposits & payment collection' },
+        { name:'Finance', role:'Reconciliation with your accounting system' },
+        { name:'Comms', role:'Email, SMS & document e-signature' },
+      ],
+      tiers: [
+        Object.assign({ tag:'Package one', name:'Admissions', blurb:'The full enquiry-to-admission journey: nurture, interviews, offers, deposits and payment tracking.',
+          items:['Enquiry & application pipeline','Interview workflow','Offers & financial assistance','Deposit & payment automation'] }, tierStyle(false)),
+        Object.assign({ tag:'Package two · most colleges', name:'Full College', blurb:'Admissions plus the complete residency: rooms, arrival, student life, wellbeing and renewals.',
+          items:['Everything in Admissions','Room allocation & residential sync','Check-in & access integration','Student life, wellbeing & renewals'] }, tierStyle(true)),
+        Object.assign({ tag:'Package three', name:'Complete', blurb:'The whole lifecycle — Full College plus alumni community, engagement and donation management.',
+          items:['Everything in Full College','Alumni onboarding & events','Donor journeys & giving','Whole-of-life reporting'] }, tierStyle(false)),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

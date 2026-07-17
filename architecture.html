@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>Product architecture — Collegium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#FFFFFF;}
+body{font-family:'Source Sans 3',sans-serif;color:#1C1C1E;-webkit-font-smoothing:antialiased;}
+a{color:#A6192E;text-decoration:none;}
+a:hover{color:#A6192E;}
+::selection{background:#131315;color:#fff;}
+</style>
+</helmet>
+<header style="background:#131315;">
+  <div style="max-width:1720px;margin:0 auto;padding:56px 48px 48px;display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;">
+    <div>
+      <a href="/" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.08em;color:#D98A95;">COLLEGIUM</a>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:500;color:#F7F7F5;margin:14px 0 10px;">Product architecture</h1>
+      <p style="font-size:16px;color:#C7C2BB;margin:0;max-width:640px;line-height:1.6;text-wrap:pretty;">The complete Collegium solution, expressed as epics and the features beneath them. Built purely on HubSpot; anything outside the platform is reached through integration.</p>
+    </div>
+    <div style="display:flex;gap:22px;align-items:center;font-size:13px;color:#9B948E;padding-bottom:6px;">
+      <span style="display:flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;background:#A6192E;border-radius:50%;display:inline-block;"></span>Integration touchpoint</span>
+      <span style="display:flex;align-items:center;gap:8px;"><span style="width:26px;height:12px;background:#A6192E;border:1px solid #3A3A3E;border-radius:2px;display:inline-block;"></span>Epic</span>
+      <span style="display:flex;align-items:center;gap:8px;"><span style="width:26px;height:12px;background:#FFFFFF;border:1px solid #D4D4D1;border-radius:2px;display:inline-block;"></span>Feature</span>
+    </div>
+  </div>
+</header>
+<main style="overflow-x:auto;background:repeating-linear-gradient(0deg,#FFFFFF 0px,#FFFFFF 31px,#F2F2F0 31px,#F2F2F0 32px);">
+  <div style="min-width:1720px;max-width:1880px;margin:0 auto;padding:64px 48px 96px;">
+    <div style="display:flex;justify-content:center;">
+      <div style="background:#131315;border:1px solid #A6192E;border-radius:2px;padding:22px 48px;text-align:center;box-shadow:0 16px 40px -20px rgba(19,19,21,.5);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.24em;color:#D98A95;text-transform:uppercase;margin-bottom:6px;">The platform</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:#F7F7F5;">Collegium <span style="font-style:italic;font-weight:400;font-size:22px;color:#9B948E;">on HubSpot</span></div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;"><div style="width:1.5px;height:36px;background:#C8C8CC;"></div></div>
+    <div style="position:relative;height:36px;">
+      <div style="position:absolute;top:0;left:calc(50% / 7);right:calc(50% / 7);border-top:1.5px solid #C8C8CC;"></div>
+      <div style="position:absolute;top:0;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(7,1fr);">
+        <sc-for list="{{ epics }}" as="e" hint-placeholder-count="7">
+          <div style="display:flex;justify-content:center;"><div style="width:1.5px;height:100%;background:#C8C8CC;"></div></div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:20px;align-items:start;">
+      <sc-for list="{{ epics }}" as="e" hint-placeholder-count="7">
+        <div style="display:flex;flex-direction:column;position:relative;">
+          <div style="position:absolute;top:0;bottom:14px;left:50%;width:1.5px;background:#E4E4E2;"></div>
+          <div style="position:relative;background:#A6192E;border:1px solid #3A3A3E;border-radius:2px;padding:16px 14px;text-align:center;margin-bottom:18px;box-shadow:0 10px 24px -16px rgba(19,19,21,.5);">
+            <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#F1D3D7;text-transform:uppercase;margin-bottom:4px;">Epic {{ e.n }}</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#F7F7F5;line-height:1.15;">{{ e.name }}</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <sc-for list="{{ e.features }}" as="f" hint-placeholder-count="5">
+              <div style="position:relative;background:#FFFFFF;border:1px solid #D4D4D1;border-radius:2px;padding:11px 13px;font-size:13.5px;line-height:1.4;color:#3F3F42;display:flex;align-items:baseline;gap:8px;justify-content:space-between;" style-hover="border-color:#A6192E;box-shadow:0 8px 20px -14px rgba(19,19,21,.4);">
+                <span>{{ f.name }}</span>
+                <sc-if value="{{ f.integration }}" hint-placeholder-val="{{ false }}"><span title="Integration touchpoint" style="width:8px;height:8px;background:#A6192E;border-radius:50%;flex-shrink:0;position:relative;top:-1px;"></span></sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="margin-top:72px;border-top:1px solid #E5E5E2;padding-top:28px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#8A8A8E;">
+      <span>Every epic runs natively on the HubSpot platform — CRM, automation, forms, email, scheduling and payments.</span>
+      <span><span style="display:inline-block;width:8px;height:8px;background:#A6192E;border-radius:50%;margin-right:6px;"></span>marks features that reach an external system (residential, access, payments or finance) via integration.</span>
+    </div>
+  </div>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const F = (name, integration) => ({ name, integration: !!integration });
+    return {
+      epics: [
+        { n:'01', name:'Enquiry & Nurture', features:[
+          F('Expression of interest capture'), F('Student & course records in CRM'), F('Application deal pipeline'),
+          F('Welcome & confirmation emails'), F('Enquiry nurture journeys'), F('Document & payment chase reminders') ] },
+        { n:'02', name:'Selection & Offers', features:[
+          F('Interview booking & availability'), F('Interview reminders (7-day & day-of)'), F('AI meeting notes & transcription'),
+          F('Interview scoring'), F('Automatic application ranking'), F('Financial assistance modelling'),
+          F('Offer & regret letters'), F('Acceptance tracking') ] },
+        { n:'03', name:'Admission & Payments', features:[
+          F('Application fee collection', true), F('Deposit requests & logging', true), F('Status & sub-status progression'),
+          F('Semester association'), F('Payment reconciliation', true), F('Payment status reporting') ] },
+        { n:'04', name:'Rooms & Arrival', features:[
+          F('Room preference collection'), F('Allocation scoring'), F('Multi-stage allocation review'),
+          F('Sign-off & final allocation'), F('Residential system write-back', true), F('Arrival-day check-in'),
+          F('Photo, key & access issue', true) ] },
+        { n:'05', name:'Student Life', features:[
+          F('Study groups & tutoring'), F('Courses & learning programmes'), F('Student & college events'),
+          F('Wellbeing requests'), F('Maintenance requests'), F('Career development'), F('Room changes', true) ] },
+        { n:'06', name:'Renewal & Departure', features:[
+          F('Intent-to-stay journeys'), F('Renewal deal pipeline'), F('Admissions notification of intent'),
+          F('Student check-out', true) ] },
+        { n:'07', name:'Advancement', features:[
+          F('Alumni community onboarding'), F('Alumni event invitations'), F('Engagement journeys'),
+          F('Donor conversion journeys'), F('Donation management', true) ] },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

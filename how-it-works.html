@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>How it works — Collegium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#FFFFFF;}
+body{font-family:'Source Sans 3',sans-serif;color:#1C1C1E;-webkit-font-smoothing:antialiased;}
+a{color:#A6192E;text-decoration:none;}
+a:hover{color:#A6192E;}
+::selection{background:#131315;color:#fff;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+</style>
+</helmet>
+<nav style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid #E5E5E2;">
+  <div style="max-width:1160px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+    <a href="/" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:.06em;color:#A6192E;display:flex;align-items:baseline;gap:10px;">COLLEGIUM<span style="font-size:11px;font-family:'Source Sans 3',sans-serif;font-weight:600;letter-spacing:.18em;color:#8A8A8E;">EST. MMXXV</span></a>
+    <div style="display:flex;align-items:center;gap:32px;font-size:14px;font-weight:600;letter-spacing:.04em;">
+      <a href="/" style="color:#57575B;" style-hover="color:#A6192E;">Home</a>
+      <a href="/how-it-works" style="color:#A6192E;border-bottom:2px solid #A6192E;padding-bottom:2px;">How it works</a>
+      <a href="/contact" style="color:#57575B;" style-hover="color:#A6192E;">Contact</a>
+      <a href="/contact" style="background:#A6192E;color:#F7F7F5;padding:10px 22px;border-radius:2px;font-weight:600;" style-hover="background:#131315;color:#fff;">Get in touch</a>
+    </div>
+  </div>
+</nav>
+<header style="background:#F7F7F5;border-bottom:1px solid #E5E5E2;">
+  <div style="max-width:1160px;margin:0 auto;padding:80px 32px;text-align:center;animation:fadeUp .7s ease both;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.2em;color:#A6192E;text-transform:uppercase;margin-bottom:20px;">How it works</div>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:54px;line-height:1.08;font-weight:500;margin:0 auto 20px;color:#131315;max-width:760px;text-wrap:balance;">One journey, eight movements.</h1>
+    <p style="font-size:18px;line-height:1.6;color:#57575B;max-width:600px;margin:0 auto;text-wrap:pretty;">Follow a student through Collegium — from the moment they first hear of your college to the day they give back to it. Each stage is automated where it should be, and human where it must be.</p>
+  </div>
+</header>
+<section style="max-width:920px;margin:0 auto;padding:88px 32px;">
+  <div style="position:relative;display:flex;flex-direction:column;gap:0;">
+    <sc-for list="{{ stages }}" as="s" hint-placeholder-count="8">
+      <div style="display:grid;grid-template-columns:120px 56px 1fr;gap:0;align-items:stretch;">
+        <div style="text-align:right;padding:6px 0 48px;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:38px;color:#3F3F44;line-height:1;">{{ s.numeral }}</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A8A8E;margin-top:6px;">{{ s.chapter }}</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="width:13px;height:13px;border-radius:50%;border:2px solid #A6192E;background:#FFFFFF;margin-top:14px;flex-shrink:0;"></div>
+          <div style="width:1px;flex:1;background:#E5E5E2;"></div>
+        </div>
+        <div style="padding:0 0 48px 8px;">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;margin:4px 0 10px;color:#A6192E;">{{ s.title }}</h2>
+          <p style="font-size:16px;line-height:1.6;color:#57575B;margin:0 0 18px;text-wrap:pretty;">{{ s.body }}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <sc-for list="{{ s.features }}" as="f" hint-placeholder-count="4">
+              <span style="font-size:13px;font-weight:600;color:#A6192E;background:#F0F0EE;border:1px solid #E5E5E2;border-radius:2px;padding:5px 12px;">{{ f }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+<section style="background:#131315;">
+  <div style="max-width:1160px;margin:0 auto;padding:88px 32px;">
+    <div style="text-align:center;max-width:620px;margin:0 auto 56px;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.22em;color:#D98A95;text-transform:uppercase;margin-bottom:16px;">The architecture</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:500;margin:0 0 14px;color:#F7F7F5;">HubSpot at the centre, your systems around it</h2>
+      <p style="font-size:16px;line-height:1.65;color:#C7C2BB;margin:0;text-wrap:pretty;">Collegium is built entirely on HubSpot — CRM, automation, forms, email and payments. Your specialist systems keep doing what they do best, connected by integration.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;max-width:960px;margin:0 auto;">
+      <sc-for list="{{ arch }}" as="a" hint-placeholder-count="3">
+        <div style="border:1px solid #3A3A3E;background:#232327;border-radius:2px;padding:30px 26px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#D98A95;margin-bottom:10px;">{{ a.tag }}</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:#F7F7F5;margin-bottom:10px;">{{ a.title }}</div>
+          <p style="font-size:14px;line-height:1.6;color:#C7C2BB;margin:0;text-wrap:pretty;">{{ a.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+<section style="max-width:1160px;margin:0 auto;padding:96px 32px;">
+  <div style="text-align:center;max-width:600px;margin:0 auto 56px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.2em;color:#A6192E;text-transform:uppercase;margin-bottom:16px;">Getting started</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:500;margin:0 0 14px;color:#131315;">From first meeting to first intake</h2>
+    <p style="font-size:16px;line-height:1.6;color:#57575B;margin:0;">A proven implementation path, refined at Ormond College.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
+    <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+      <div style="border-top:2px solid #A6192E;padding-top:22px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.18em;color:#A6192E;text-transform:uppercase;margin-bottom:8px;">Step {{ st.n }}</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:#A6192E;margin-bottom:8px;">{{ st.title }}</div>
+        <p style="font-size:14.5px;line-height:1.6;color:#57575B;margin:0;text-wrap:pretty;">{{ st.body }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+<section style="background:#F7F7F5;border-top:1px solid #E5E5E2;">
+  <div style="max-width:760px;margin:0 auto;padding:88px 32px;text-align:center;">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:500;margin:0 0 18px;color:#131315;text-wrap:balance;">Let's map this to your college.</h2>
+    <p style="font-size:17px;color:#57575B;line-height:1.6;margin:0 0 36px;">Every college's journey is a little different. We'll show you where Collegium fits yours.</p>
+    <a href="/contact" style="display:inline-block;background:#A6192E;color:#F7F7F5;padding:16px 40px;border-radius:2px;font-size:16px;font-weight:600;letter-spacing:.03em;" style-hover="background:#131315;color:#fff;">Get in touch</a>
+  </div>
+</section>
+<footer style="background:#131315;">
+  <div style="max-width:1160px;margin:0 auto;padding:40px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:20px;letter-spacing:.06em;color:#EDEDED;">COLLEGIUM</div>
+    <div style="display:flex;gap:28px;font-size:13px;">
+      <a href="/" style="color:#9B948E;" style-hover="color:#D98A95;">Home</a>
+      <a href="/how-it-works" style="color:#9B948E;" style-hover="color:#D98A95;">How it works</a>
+      <a href="/contact" style="color:#9B948E;" style-hover="color:#D98A95;">Contact</a>
+    </div>
+    <div style="font-size:12px;color:#6E6862;">© 2026 Collegium · Made in Australia</div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      stages: [
+        { numeral:'I', chapter:'Admissions', title:'Enquiry', body:'A prospective student expresses interest and Collegium takes it from there — creating their record, opening an application, and nurturing them with a welcome series, process overviews and status updates. Payment of the application fee is tracked automatically.',
+          features:['Expression of interest forms','CRM record & application deal','Nurture & reminder journeys','Application fee tracking'] },
+        { numeral:'II', chapter:'Admissions', title:'Interview', body:'When an application progresses, the student receives a booking link showing real interviewer availability. Reminders go out at seven days and on the day; notes and AI meeting transcription are logged against the record, with scores captured for ranking.',
+          features:['Self-serve interview booking','Automated reminders','AI meeting transcription','Interview notes & scoring'] },
+        { numeral:'III', chapter:'Admissions', title:'Offer', body:'Applications are automatically ranked from enquiry data and interview scores. Your committee reviews and selects — Collegium calculates potential financial assistance, then sends offer and regret letters, and records acceptances the moment they happen.',
+          features:['Automatic ranking','Financial assistance modelling','Offer & regret letters','Acceptance tracking'] },
+        { numeral:'IV', chapter:'Admissions', title:'Admission', body:'On acceptance, the deposit request goes out and payment is logged against the enquiry. The student\u2019s status advances, and their record flows into your residential system — ready for allocation.',
+          features:['Deposit requests & logging','Status progression','Residential system sync','Semester association'] },
+        { numeral:'V', chapter:'Operations', title:'Room allocation', body:'Students are scored for allocation and select their room preferences. Draft allocations pass through your review chain — operations, deans, wellbeing — with feedback consolidated, final sign-off recorded, and rooms written back to your residential system.',
+          features:['Preference collection','Allocation scoring','Multi-stage review & sign-off','Residential write-back'] },
+        { numeral:'VI', chapter:'Operations', title:'Arrival & orientation', body:'On arrival day the student checks in — photo taken, room key issued, building access granted through your security platform — and orientation begins. Everything syncs back to their record in real time.',
+          features:['Arrival-day check-in','Access control provisioning','Photo & key issue','Orientation programme'] },
+        { numeral:'VII', chapter:'Operations', title:'Student life', body:'Through semester, Collegium is the quiet operating system of college life: study groups, tutoring, courses, student and college events, wellbeing requests, maintenance, career development and room changes — every interaction on the record.',
+          features:['Events & programmes','Tutoring & courses','Wellbeing & maintenance requests','Room changes'] },
+        { numeral:'VIII', chapter:'Advancement', title:'Renewal & alumni', body:'As semester ends, renewal journeys ask each student their intent to stay, admissions is notified, and departing students check out cleanly. Graduates join your alumni community automatically — invited to events, and nurtured into lifelong supporters and donors.',
+          features:['Intent-to-stay journeys','Renewal pipeline','Check-out','Alumni & donor journeys'] },
+      ],
+      arch: [
+        { tag:'The platform', title:'HubSpot', body:'CRM, automation, forms, email, scheduling and payments — one platform your staff already know, with enterprise security and nothing bespoke to host.' },
+        { tag:'The connections', title:'Integrations', body:'Residential systems such as StarRez, access platforms such as Gallagher, payment and finance tools — each connected, each remaining the source of truth for its domain.' },
+        { tag:'The result', title:'One record', body:'A single, continuous story per student: every email, payment, room, event and gift — from first enquiry to alumni giving.' },
+      ],
+      steps: [
+        { n:'1', title:'Discover', body:'We map your college\u2019s journey — admissions cycle, review chains, systems and quirks.' },
+        { n:'2', title:'Configure', body:'Collegium is shaped to your process in HubSpot, with your letters, forms and journeys.' },
+        { n:'3', title:'Connect', body:'Residential, access, payments and finance integrations are wired and tested end to end.' },
+        { n:'4', title:'Launch', body:'Your team is trained, the first intake goes live, and we stay alongside you through it.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
